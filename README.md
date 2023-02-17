@@ -35,11 +35,11 @@ info: Microsoft.Hosting.Lifetime[14]
 info: Microsoft.Hosting.Lifetime[14]
       Now listening on: http://localhost:5095
 ```
-- The HTTPS port needs to be configured on the Angular app environment configuration for the application to find the service (This is explained on the Angular app section)
+> ℹ️ The HTTPS port needs to be configured on the Angular app environment configuration for the application to find the service (This is explained on the Angular app section)
 
 ## meta-photo Angular app
 ### Visual Studio Code
-> ### ℹ️ Note: Only the **Photos** section is part of this MVP.
+> ℹ️ Note: Only the **Photos** section is part of this MVP.
 - Open the meta-photo folder, which contains the Angular app files.
 - Open the file
 ```
