@@ -1,0 +1,22 @@
+<div class="content">
+    <div class="photo">
+        <img [src]="data.url" alt="" style="width: 100%;">
+    </div>
+    <div class="description">
+        <div>
+            <h1>Title</h1>
+            <p>{{ data.title }}</p>
+        </div>
+        <hr>
+        <div>
+            <h4>Album</h4>
+            <p>{{ data.album.title }}</p>
+        </div>
+        <hr>
+        <div>
+            <h4>User</h4>
+            <p>{{ data.album.user.name }}</p>
+            <p>{{ data.album.user.email }}</p>
+        </div>
+    </div>
+</div>

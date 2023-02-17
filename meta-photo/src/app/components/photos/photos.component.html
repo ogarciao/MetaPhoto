@@ -1,0 +1,53 @@
+<div class="content">
+  <h1>Photos</h1>
+  <!-- Filters -->
+  <div class="filters">
+    <mat-form-field class="filter">
+      <mat-label>Title</mat-label>
+      <input [(ngModel)]="title" matInput placeholder="Search by title">
+      <button *ngIf="title" matSuffix mat-icon-button aria-label="Clear" (click)="title=''">
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-form-field>
+    <mat-form-field class="filter">
+      <mat-label>Album title</mat-label>
+      <input [(ngModel)]="albumTitle" matInput placeholder="Search by album">
+      <button *ngIf="albumTitle" matSuffix mat-icon-button aria-label="Clear" (click)="albumTitle=''">
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-form-field>
+    <mat-form-field class="filter">
+      <mat-label>E-mail</mat-label>
+      <input [(ngModel)]="email" matInput placeholder="Search by email">
+      <button *ngIf="email" matSuffix mat-icon-button aria-label="Clear" (click)="email=''">
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-form-field>
+    <button mat-mini-fab matTooltip="Filter" color="primary" [disabled]="loading" (click)="onFilter()">
+      <mat-icon *ngIf="!loading">filter_list</mat-icon>
+      <mat-spinner diameter="40" *ngIf="loading"></mat-spinner>
+    </button>
+    <button *ngIf="canClearFilters" mat-mini-fab matTooltip="Clear filters" color="primary" [disabled]="loading" (click)="onClearFilters()">
+      <mat-icon>cancel</mat-icon>
+    </button>
+  </div>
+  <!-- Navigator -->
+  <mat-paginator #paginator [length]="total" [pageSize]="limit" [pageSizeOptions]="[25, 50, 100, 200]"
+    [pageIndex]="offset/limit" [showFirstLastButtons]="true" aria-label="Select page" (page)="onPagination($event)"
+    [disabled]="loading">
+  </mat-paginator>
+  <!-- Photos -->
+  <div *ngIf="photos.length > 0; else elseBlock">
+    <div class="card-container">
+      <div *ngFor="let photo of photos" class="card">
+        <img [src]="photo.thumbnailUrl" alt="" class="thumbnail"
+          matTooltip="{{photo.title}} by {{photo.album.user.name}}" (click)="onImageClick(photo)">
+      </div>
+    </div>
+  </div>
+  <ng-template #elseBlock>
+    <p *ngIf="!loading">
+      We couldn't find any photo.
+    </p>
+  </ng-template>
+</div>
