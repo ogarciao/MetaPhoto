@@ -29,6 +29,9 @@ builder.Services.AddScoped<IApiClient<Photo>, ApiClient<Photo>>();
 builder.Services.AddScoped<IApiClient<Album>, ApiClient<Album>>();
 builder.Services.AddScoped<IApiClient<User>, ApiClient<User>>();
 
+// Add AWS Lambda support.
+builder.Services.AddAWSLambdaHosting(LambdaEventSource.HttpApi);
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
