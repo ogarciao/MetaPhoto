@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "f/I1Mh7L0TdqEuBNvqU5I6zWgWMT9wpmrjb5+hoyjUBpAjWSfqKkhcUVxJ/0L/18wg+q144p8d/iHxzQdpEQuQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\orlan\\source\\repos\\MetaPhoto\\MetaPhoto\\MetaPhoto.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\orlan\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "C:\\Users\\orlan\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\orlan\\.nuget\\packages\\swashbuckle.aspnetcore\\6.2.3\\swashbuckle.aspnetcore.6.2.3.nupkg.sha512",
+    "C:\\Users\\orlan\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.2.3\\swashbuckle.aspnetcore.swagger.6.2.3.nupkg.sha512",
+    "C:\\Users\\orlan\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.2.3\\swashbuckle.aspnetcore.swaggergen.6.2.3.nupkg.sha512",
+    "C:\\Users\\orlan\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.2.3\\swashbuckle.aspnetcore.swaggerui.6.2.3.nupkg.sha512"
+  ],
+  "logs": []
+}
