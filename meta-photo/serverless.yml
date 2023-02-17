@@ -1,0 +1,36 @@
+service: ngx-serverless-starter
+
+plugins:
+  - serverless-offline
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  lambdaHashingVersion: 20201221
+  memorySize: 192
+  timeout: 30
+
+package:
+  exclude:
+   - src/**
+   - node_modules/**
+   - e2e/**
+   - coverage/**
+   - .angular/**
+   ##- '!src/assets/**'
+   - '!node_modules/@vendia/serverless-express/**'
+   - '!node_modules/aws-serverless-express/**'
+   - '!dist/**'
+   - '!lambda.js'
+   - '!node_modules/binary-case/**'
+   - '!node_modules/type-is/**'
+   - '!node_modules/media-typer/**'
+   - '!node_modules/mime-types/**'
+   - '!node_modules/mime-db/**'
+    
+functions:
+  api:
+    handler: lambda.handler
+    events:
+      - http: GET /
+      - http: GET /{proxy+}
