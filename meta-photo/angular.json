@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/meta-photo",
+            "outputPath": "dist/meta-photo/browser",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -93,6 +93,59 @@
             ],
             "scripts": []
           }
+        },
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/meta-photo/server",
+            "main": "server.ts",
+            "tsConfig": "tsconfig.server.json"
+          },
+          "configurations": {
+            "production": {
+              "outputHashing": "media"
+            },
+            "development": {
+              "optimization": false,
+              "sourceMap": true,
+              "extractLicenses": false,
+              "vendorChunk": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve-ssr": {
+          "builder": "@nguniversal/builders:ssr-dev-server",
+          "configurations": {
+            "development": {
+              "browserTarget": "meta-photo:build:development",
+              "serverTarget": "meta-photo:server:development"
+            },
+            "production": {
+              "browserTarget": "meta-photo:build:production",
+              "serverTarget": "meta-photo:server:production"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "prerender": {
+          "builder": "@nguniversal/builders:prerender",
+          "options": {
+            "routes": [
+              "/"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "meta-photo:build:production",
+              "serverTarget": "meta-photo:server:production"
+            },
+            "development": {
+              "browserTarget": "meta-photo:build:development",
+              "serverTarget": "meta-photo:server:development"
+            }
+          },
+          "defaultConfiguration": "production"
         }
       }
     }
