@@ -6,6 +6,12 @@ This repo contains to main folders:
 - MetaPhoto: is a .Net Core project for the REST API which has the enrichment endpoint.
 - meta-photo: is an Angular application which consumes the .Net Core API.
 
+# Deployed application
+- The application can be found here: <a href="https://f2kjwa2ip0.execute-api.us-east-1.amazonaws.com/dev/">MetaPhoto App</a>
+- The published API can be found here: <a href="https://gs5q2theevvyeinja6eigtuqdy0zkwbo.lambda-url.us-east-1.on.aws/api/photos">MetaPhoto API</a>
+
+> ℹ️ Both, the App and the API are deployed on AWS Lambdas
+
 # Building the applications
 ## MetaPhoto API
 ### Visual Studio
